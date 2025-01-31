@@ -1,0 +1,35 @@
+{
+  "grammars": [
+    {
+      "name": "angelscript",
+      "camelcase": "AngelScript",
+      "scope": "source.angelscript",
+      "file-types": [
+        "as"
+      ],
+      "injection-regex": "^angelscript$"
+    }
+  ],
+  "metadata": {
+    "version": "0.0.2",
+    "license": "MIT",
+    "description": "Angelscript grammar for tree-sitter",
+    "authors": [
+      {
+        "name": "David Horsley",
+        "email": "david.e.horsley@gmail.com"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/dehorsley/tree-sitter-angelscript"
+    }
+  },
+  "bindings": {
+    "c": true,
+    "go": true,
+    "node": true,
+    "python": true,
+    "rust": true,
+    "swift": true
+  }
+}

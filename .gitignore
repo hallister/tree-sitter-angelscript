@@ -1,34 +1,40 @@
-# Logs
-logs
-*.log
+# Rust artifacts
+target/
 
-# Dependency directories
+# Node artifacts
+build/
+prebuilds/
 node_modules/
 
-# Optional npm cache directory
-.npm
+# Swift artifacts
+.build/
 
-# Optional eslint cache
-.eslintcache
+# Go artifacts
+_obj/
 
-# Environment variables
-.env
-.env.local
-.env.*.local
-.env.development.local
-.env.test.local
-.env.production.local
-
-# Build output
-build/
+# Python artifacts
+.venv/
 dist/
-out/
-*.pid
-*.pid.lock
+*.egg-info
+*.whl
 
-# Coverage directory used by tools like istanbul
-coverage/
+# C artifacts
+*.a
+*.so
+*.so.*
+*.dylib
+*.dll
+*.pc
 
-# Next.js build output
-.next/
-.DS_Store
+# Example dirs
+/examples/*/
+
+# Grammar volatiles
+*.wasm
+*.obj
+*.o
+
+# Archives
+*.tar.gz
+*.tgz
+*.zip
