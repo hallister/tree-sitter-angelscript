@@ -806,6 +806,139 @@
     }
   },
   {
+    "type": "class",
+    "named": true,
+    "fields": {
+      "body": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "class_member",
+            "named": true
+          }
+        ]
+      },
+      "class": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "abstract",
+            "named": false
+          },
+          {
+            "type": "final",
+            "named": false
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "parameters": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "parameter_list",
+            "named": true
+          }
+        ]
+      },
+      "specifier": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "func_location",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "parent",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "class_member",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "break_statement",
+          "named": true
+        },
+        {
+          "type": "case_statement",
+          "named": true
+        },
+        {
+          "type": "compound_statement",
+          "named": true
+        },
+        {
+          "type": "continue_statement",
+          "named": true
+        },
+        {
+          "type": "do_statement",
+          "named": true
+        },
+        {
+          "type": "expression_statement",
+          "named": true
+        },
+        {
+          "type": "for_statement",
+          "named": true
+        },
+        {
+          "type": "func",
+          "named": true
+        },
+        {
+          "type": "if_statement",
+          "named": true
+        },
+        {
+          "type": "return_statement",
+          "named": true
+        },
+        {
+          "type": "switch_statement",
+          "named": true
+        },
+        {
+          "type": "variable_definition",
+          "named": true
+        },
+        {
+          "type": "while_statement",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "comma_expression",
     "named": true,
     "fields": {
@@ -2208,6 +2341,21 @@
     }
   },
   {
+    "type": "parent",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "parenthesized_expression",
     "named": true,
     "fields": {},
@@ -2459,6 +2607,7 @@
   {
     "type": "script",
     "named": true,
+    "root": true,
     "fields": {},
     "children": {
       "multiple": true,
@@ -2470,6 +2619,10 @@
         },
         {
           "type": "case_statement",
+          "named": true
+        },
+        {
+          "type": "class",
           "named": true
         },
         {
@@ -3333,6 +3486,10 @@
     "named": false
   },
   {
+    "type": "abstract",
+    "named": false
+  },
+  {
     "type": "and",
     "named": false
   },
@@ -3350,6 +3507,10 @@
   },
   {
     "type": "case",
+    "named": false
+  },
+  {
+    "type": "class",
     "named": false
   },
   {
@@ -3453,6 +3614,10 @@
     "named": false
   },
   {
+    "type": "mixin",
+    "named": false
+  },
+  {
     "type": "not",
     "named": false
   },
@@ -3507,10 +3672,6 @@
   {
     "type": "true",
     "named": true
-  },
-  {
-    "type": "typedef",
-    "named": false
   },
   {
     "type": "uint",

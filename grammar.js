@@ -52,7 +52,7 @@ module.exports = grammar({
             // import_,
             // enum_,
             // $.typdef,
-            // class_,
+            $.class,
             // mixin_,
             // interface_,
             // funcdef,
@@ -78,6 +78,31 @@ module.exports = grammar({
     //   choice(';', field('body', $.block))
     // ),
 
+    parent: $ => seq(
+      ':',
+      $.identifier,
+      repeat(
+        seq(
+          ',',
+          $.identifier
+        )
+      ),
+    ),
+
+    class: $ => seq(
+      optional('mixin'),
+      field('class', repeat(choice('abstract', 'final'))),
+      field('specifier', optional($.func_location)),
+      'class',
+      field('name', $.identifier),
+      field('parameters', optional($.parameter_list)),
+      choice(';',
+        seq(
+          optional($.parent),
+          field("body", $.class_member)
+        )
+      ),
+    ),
 
     func: $ => seq(
       field('specifier', seq(
@@ -155,7 +180,6 @@ module.exports = grammar({
 
     type_parameter: $ => seq('<', commaSep1($.type), '>'),
 
-
     variable_definition: $ =>
       seq(
         optional($.access_specifier),
@@ -188,10 +212,15 @@ module.exports = grammar({
       field('value', $._expression)
     ),
 
-
     compound_statement: $ => seq(
       '{',
       repeat($._block_item),
+      '}',
+    ),
+
+    class_member: $ => seq(
+      '{',
+      repeat(choice($._block_item, $.func)),
       '}',
     ),
 
